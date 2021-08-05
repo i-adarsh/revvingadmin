@@ -14,8 +14,8 @@ You will need the following programmes installed on your computer.
 ##
 
 ```
-git clone https://bitbucket.org/revvingadmin/client
-cd client
+git clone https://github.com/i-adarsh/revvingadmin.git
+cd revvingadmin
 ```
 
 This will install the dependencies.
