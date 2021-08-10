@@ -10,15 +10,15 @@ pipeline{
                 }
             }       
         }
-//         stage('Build'){
-//             agent any
-//             steps{
-//                 echo "yarn build"
-//                 nodejs('Node-16.6.1'){
-//                     sh "yarn build"
-//                 }
-//             }
-//         }
+        stage('Build'){
+            agent any
+            steps{
+                echo "yarn build"
+                nodejs('Node-16.6.1'){
+                    sh "yarn build"
+                }
+            }
+        }
         stage('Deploy'){
             agent any
             steps{
