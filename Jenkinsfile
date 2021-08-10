@@ -10,22 +10,22 @@ pipeline{
                 }
             }       
         }
-        stage('Build'){
-            agent any
-            steps{
-                echo "yarn build"
-                nodejs('Node-16.6.1'){
-                    sh "yarn build"
-                }
-            }
-        }
+//         stage('Build'){
+//             agent any
+//             steps{
+//                 echo "yarn build"
+//                 nodejs('Node-16.6.1'){
+//                     sh "yarn build"
+//                 }
+//             }
+//         }
         stage('Deploy'){
             agent any
             steps{
             sh label: '', script: '''rm -rf dockerimg
 mkdir dockerimg
 cd dockerimg
-sudo cp /root/revvingadmin/public/ .
+sudo cp -rf /root/revvingadmin/public/ .
 sudo touch Dockerfile
 cat <<EOT>>Dockerfile
 FROM nginx:latest
