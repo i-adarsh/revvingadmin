@@ -4,6 +4,11 @@ pipeline{
     stage('Starting Yarn'){
       agent any
       steps{
+        sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash'
+        sh ' ~/.nvm/nvm.sh'
+        sh 'nvm install node'
+        sh 'npm install -g npm@7.20.5'
+        sh 'npm install yarn -g'
         sh 'yarn'
       }       
     }
