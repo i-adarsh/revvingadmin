@@ -1,15 +1,6 @@
 pipeline{
     agent none
     stages{
-        stage('yarn'){
-            agent any
-            steps{
-                echo "executing yarn ..."
-                nodejs('Node-16.6.1'){
-                    sh "yarn install"
-                }
-            }       
-        }
         stage('Build'){
             agent any
             steps{
