@@ -32,6 +32,7 @@ pipeline{
 sudo pwd
 sudo ls -al
 sudo cp -rf build/ /usr/share/nginx/html/
+sudo systemctl restart nginx
 '''
         }
     }
