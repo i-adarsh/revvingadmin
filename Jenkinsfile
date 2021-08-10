@@ -31,7 +31,7 @@ pipeline{
             sh label: '', script: '''
 sudo pwd
 sudo ls -al
-sudo cp -rf build/ /usr/share/nginx/html/
+sudo cp -rf .build/* /usr/share/nginx/html/
 sudo systemctl restart nginx
 '''
         }
