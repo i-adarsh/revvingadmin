@@ -18,12 +18,12 @@ pipeline{
                     sh "yarn build"
                 }
             }
-        }
-        post {
+            post {
         always {
             archiveArtifacts artifacts: 'build/*', onlyIfSuccessful: true
         }
        }
+        }
         
         stage('Deploy'){
             agent any
