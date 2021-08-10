@@ -1,7 +1,7 @@
 pipeline{
     agent none
     stages{
-        stage('yarn'){
+        stage('Stage'){
             agent any
             steps{
                 echo "executing yarn ..."
