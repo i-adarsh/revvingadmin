@@ -27,7 +27,7 @@ mkdir dockerimg
 cd dockerimg
 sudo cp -rf /root/revvingadmin/public/ .
 sudo touch Dockerfile
-cat <<EOT>>Dockerfile
+sudo cat <<EOT>>Dockerfile
 FROM nginx:latest
 COPY * /usr/share/nginx/html/
 EOT
