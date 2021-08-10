@@ -6,14 +6,17 @@ pipeline{
             steps{
                 echo "executing yarn ..."
                 nodejs('Node-16.6.1'){
-                    sh "yarn install"
+                    sh "yarn"
                 }
             }       
         }
         stage('Build'){
             agent any
             steps{
-                sh 'sudo yarn build'
+                echo "yarn build"
+                nodejs('Node-16.6.1'){
+                    sh "yarn build"
+                }
             }
         }
         stage('Deploy'){
