@@ -4,6 +4,7 @@ pipeline{
     stage('yarn'){
       agent any
       steps{
+        sh "sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash"
         sh "sudo npm install -g yarn"
       }       
     }
