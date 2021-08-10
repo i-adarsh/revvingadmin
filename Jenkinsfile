@@ -28,7 +28,7 @@ cd dockerimg
 sudo cp -rf /root/revvingadmin/public/ .
 sudo echo -e "FROM nginx:latest \n COPY . /usr/share/nginx/html/ " > Dockerfile
 sudo docker build -t iadarshkr/revving:latest .
-sudo docker container run -itd --name revving -p 80:80 iadarshkr/revving:latest'''
+sudo docker container run -itd --name revving$BUILD_NUMBER -p 80:80 iadarshkr/revving:latest'''
         }
     }
 }
