@@ -1,21 +1,22 @@
 pipeline{
-    agent none
-    stages{
-        stage('Prepare') {
-            agent any
-            sh "sudo npm install -g yarn"
-            sh "sudo yarn install"
-        }
-        stage('Build'){
-            agent any
-            steps{
-                sh 'sudo yarn build'
-            }
-        } 
-        stage('Deploy'){
-            agent any
-            steps{
-                sh label: '', script: '''rm -rf dockerimg
+  agent none
+  stages{
+    stage('yarn'){
+      agent any
+      steps{
+        sh "sudo npm install -g yarn"
+      }       
+    }
+    stage('Build'){
+      agent any
+      steps{
+        sh 'sudo yarn build'
+      }
+    }
+    stage('Deploy'){
+      agent any
+      steps{
+        sh label: '', script: '''rm -rf dockerimg
 mkdir dockerimg
 cd dockerimg
 cp /root/revvingadmin/public/* .
@@ -26,7 +27,7 @@ COPY * /usr/share/nginx/html/
 EOT
 sudo docker build -t iadarshkr/revving:latest .
 sudo docker container run -itd --name revving -p 80:80 iadarshkr/revving:latest'''
-        }
-}
-}
+      }
+    }
+  }
 }
