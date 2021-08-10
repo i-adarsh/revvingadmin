@@ -1,6 +1,15 @@
 pipeline{
     agent none
     stages{
+        stage('yarn'){
+            agent any
+            steps{
+                echo "executing yarn ..."
+                nodejs('Node-16.6.1'){
+                    sh "yarn install"
+                }
+            }       
+        }
         stage('Build'){
             agent any
             steps{
@@ -16,8 +25,8 @@ pipeline{
             sh label: '', script: '''rm -rf dockerimg
 mkdir dockerimg
 cd dockerimg
-cp /root/revvingadmin/public/* .
-touch Dockerfile
+sudo cp /root/revvingadmin/public/* .
+sudo touch Dockerfile
 cat <<EOT>>Dockerfile
 FROM nginx:latest
 COPY * /usr/share/nginx/html/
