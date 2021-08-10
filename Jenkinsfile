@@ -1,13 +1,13 @@
 pipeline{
   agent none
     stage('Prepare') {
-    sh "npm install -g yarn"
-    sh "yarn install"
+    sh "sudo npm install -g yarn"
+    sh "sudo yarn install"
     }
     stage('Build'){
       agent any
       steps{
-        sh 'yarn build'
+        sh 'sudo yarn build'
       }
     } 
     stage('Deploy'){
