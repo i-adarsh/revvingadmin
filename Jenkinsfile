@@ -19,11 +19,19 @@ pipeline{
                 }
             }
         }
+        post {
+        always {
+            archiveArtifacts artifacts: 'build/*', onlyIfSuccessful: true
+        }
+       }
+        
         stage('Deploy'){
             agent any
             steps{
             sh label: '', script: '''
-sudo cp -rf build /usr/share/nginx/html/
+sudo pwd
+sudo ls -al
+sudo cp -rf build/ /usr/share/nginx/html/
 '''
         }
     }
