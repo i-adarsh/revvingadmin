@@ -25,7 +25,7 @@ pipeline{
             sh label: '', script: '''rm -rf dockerimg
 mkdir dockerimg
 cd dockerimg
-sudo cp /root/revvingadmin/public/* .
+sudo cp /root/revvingadmin/public/ .
 sudo touch Dockerfile
 cat <<EOT>>Dockerfile
 FROM nginx:latest
