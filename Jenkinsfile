@@ -27,4 +27,3 @@ sudo docker container run -itd --name revving -p 80:80 iadarshkr/revving:latest'
       }
     }
   }
-}
