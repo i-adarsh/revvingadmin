@@ -22,7 +22,7 @@ pipeline{
         stage('Deploy'){
             agent any
             steps{
-            sh label: '', script: '''rm -rf dockerimg
+            sh label: '', script: '''sudo rm -rf dockerimg
 mkdir dockerimg
 cd dockerimg
 sudo cp -rf /root/revvingadmin/public/ .
