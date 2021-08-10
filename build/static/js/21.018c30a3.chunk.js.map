@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/PageNotFound/index.tsx"],"names":["PageNotFound"],"mappings":"6HAAA,oEAEaA,EAAe,kBAAM,kDAEnBA","file":"static/js/21.018c30a3.chunk.js","sourcesContent":["import React from 'react';\n\nexport const PageNotFound = () => <div>Page not found</div>;\n\nexport default PageNotFound;\n"],"sourceRoot":""}
